@@ -15,7 +15,8 @@ class OwnershipsController < ApplicationController
     end
     
     if params[:type] == 'Have'
-      current_user.want(@item)
+      ::Rails.logger.debug("have")
+      current_user.have(@item)
       flash[:success] = '商品をHaveしました。'
     end
     
